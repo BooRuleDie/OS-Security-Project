@@ -1,4 +1,4 @@
-// DLLExample.c
+// main.c
 #include <stdio.h>
 #include <windows.h>
 
