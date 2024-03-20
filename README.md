@@ -27,7 +27,7 @@ Then execute the `poc.exe` program.
 poc.exe
 ```
 
-![dll-search](images/dll-search.png)
+<img src='images/dll-search.png' width='400'>
 
 If attacker is allowed to create a file in one of these specified paths, then the poc.exe would be vulnerable to Hijacking Attack.
 
@@ -51,10 +51,10 @@ https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo
 ```
 
 Unzip the program and run the application to see if it works, it should look like this:
-![bginfo](./images/bginfo.png)
+<img src='./images/bginfo.png' width='400'>
 
 Close the app and open Process Monitor, we'll filter the missing DLLs `bginfo.exe` tries to import but can't:
-![missing-dlls-bginfo](./images/missing-dlls-bginfo.png)
+<img src='./images/missing-dlls-bginfo.png' width='400'>
 
 I've picked `TextShaping.dll`. Now let's move our `test.dll` into this folder and re-execute the `bginfo.exe`.
 ```
@@ -62,9 +62,7 @@ move test.dll <PASTE YOUR DLL LOCATION HERE>
 ```
 
 After the execution it should pop up the calculator app. Here's a video of whole process:
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=K-3M5oPFdvw
-" target="_blank"><img src="./images/bginfo.png" 
-alt="Simulation" width="240" height="180" border="10" /></a>
+![YouTube Video](http://www.youtube.com/watch?feature=player_embedded&v=K-3M5oPFdvw)
 
 # How to Prevent
 
