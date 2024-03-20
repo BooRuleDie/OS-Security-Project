@@ -1,35 +1,17 @@
-// main.c
 #include <stdio.h>
 #include <windows.h>
-
-// Declare the function prototype for the function we want to import from kernel32.dll
-typedef DWORD (__stdcall *GetCurrentProcessIdFunc)(void);
+#include <initguid.h>
+#include <objbase.h>
 
 int main() {
-    HMODULE hKernel32;                  // Handle to the kernel32.dll module
-    GetCurrentProcessIdFunc getCurrentProcessId;  // Function pointer to GetCurrentProcessId
-
-    // Load the kernel32.dll dynamically
-    hKernel32 = LoadLibrary("kernel32.dll");
-    if (hKernel32 == NULL) {
-        printf("Failed to load kernel32.dll: %d\n", GetLastError());
+    HMODULE hDll = LoadLibraryA("ole32.dll");
+    if (hDll == NULL) {
+        printf("Failed to load ole32.dll\n");
         return 1;
     }
 
-    // Get the address of the GetCurrentProcessId function
-    getCurrentProcessId = (GetCurrentProcessIdFunc)GetProcAddress(hKernel32, "GetCurrentProcessId");
-    if (getCurrentProcessId == NULL) {
-        printf("Failed to get function address: %d\n", GetLastError());
-        FreeLibrary(hKernel32);
-        return 1;
-    }
+    printf("ole32.dll loaded successfully!\n");
 
-    // Call the GetCurrentProcessId function from kernel32.dll
-    DWORD processId = getCurrentProcessId();
-    printf("Current Process ID: %lu\n", processId);
-
-    // Clean up
-    FreeLibrary(hKernel32);
-
+    FreeLibrary(hDll);
     return 0;
 }
