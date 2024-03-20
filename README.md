@@ -6,7 +6,7 @@ DLLs are like shared code libraries that computer programs use. They contain ins
 
 This vulnerability occurs when a program loads a DLL from an insecure location before legitimate locations. When a program tries to load a DLL, Windows checks for specific locations in order:
 
-<img src='images/dll-search-order.png' width='100'>
+<img src='images/dll-search-order.png' width='400'>
 
 In order to see a live example we can compile `poc.c` file which is a file that tries to import a DLL named `nonexistent.dll`. This DLL is not existed in any directory so we can see which locations Windows searches to find the DLL.
 
