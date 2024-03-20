@@ -46,9 +46,7 @@ rundll32.exe test.dll, DllMain
 This behaviour will be used for the **Proof Of Concept**.
 
 Now let's install **BgInfo** app from Microsoft's offical website:
-```http
-https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo
-```
+[BGInfo](https://learn.microsoft.com/en-us/sysinternals/downloads/bginfo)
 
 Unzip the program and run the application to see if it works, it should look like this:
 <img src='./images/bginfo.png' width='400'>
@@ -62,7 +60,7 @@ move test.dll <PASTE YOUR DLL LOCATION HERE>
 ```
 
 After the execution it should pop up the calculator app. Here's a video of whole process:
-![YouTube Video](http://www.youtube.com/watch?feature=player_embedded&v=K-3M5oPFdvw)
+[YouTube Video](http://www.youtube.com/watch?feature=player_embedded&v=K-3M5oPFdvw)
 
 # How to Prevent
 
